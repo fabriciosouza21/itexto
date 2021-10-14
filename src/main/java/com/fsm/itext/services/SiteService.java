@@ -13,8 +13,8 @@ public class SiteService {
 	@Autowired
 	SiteRepository siteRepository;
 	
-	public Site findById() {
-		Optional<Site>  site =  siteRepository.findById(1L);
+	public Site findById(Long id) {
+		Optional<Site>  site =  siteRepository.findById(id);
 		return site.get();
 	}
 }
