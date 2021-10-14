@@ -189,8 +189,6 @@ public class BlogPost implements Serializable{
 			return false;
 		BlogPost other = (BlogPost) obj;
 		return Objects.equals(id, other.id);
-	}
-	
-	
+	}	
 
 }
