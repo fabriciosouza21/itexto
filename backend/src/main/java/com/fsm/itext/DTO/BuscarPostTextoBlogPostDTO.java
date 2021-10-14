@@ -5,7 +5,7 @@ import java.time.Instant;
 
 import com.fsm.itext.entities.BlogPost;
 
-public class BuscarPostTextoDTO implements Serializable{
+public class BuscarPostTextoBlogPostDTO implements Serializable{
 	
 	private static final long serialVersionUID = 1L;
 
@@ -22,9 +22,9 @@ public class BuscarPostTextoDTO implements Serializable{
 	private String url;
 	private BuscarPostTextoSiteDTO blog;
 	
-	public BuscarPostTextoDTO() {}
+	public BuscarPostTextoBlogPostDTO() {}
 
-	public BuscarPostTextoDTO(Long id, String titulo, String resumo, Integer cliques, Instant data_inclusao,
+	public BuscarPostTextoBlogPostDTO(Long id, String titulo, String resumo, Integer cliques, Instant data_inclusao,
 			Instant data_publicacao, Integer votos_negativos, Integer votos_positivos, Long favoritos, Long comentarios,
 			String url, BuscarPostTextoSiteDTO blog) {
 		super();
@@ -42,7 +42,7 @@ public class BuscarPostTextoDTO implements Serializable{
 		this.blog = blog;
 	}
 	
-	public BuscarPostTextoDTO(BlogPost entity) {
+	public BuscarPostTextoBlogPostDTO(BlogPost entity) {
 		super();
 		this.id = entity.getId();
 		this.titulo = entity.getTitulo();
