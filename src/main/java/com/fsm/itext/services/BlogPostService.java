@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import com.fsm.itext.DTO.BlogPostDTO;
 import com.fsm.itext.entities.BlogPost;
 import com.fsm.itext.repositories.BlogPostRepository;
 
@@ -16,10 +17,9 @@ public class BlogPostService {
 	private BlogPostRepository repository;
 	
 	@Transactional(readOnly = true)
-	public BlogPost  findById(Long id) {
+	public BlogPostDTO  findById(Long id) {
 		Optional<BlogPost> blogPost = repository.findById(id);
-		return blogPost.get() ;
-	}
-	
+		return new BlogPostDTO( blogPost.get());
+	}	
 
 }
