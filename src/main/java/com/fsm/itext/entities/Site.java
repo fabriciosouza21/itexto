@@ -26,15 +26,26 @@ public class Site {
 	public Site() {
 		
 	}
-
-	public Site(Long id, Long version) {
-		super();
+	
+	public Site(Long id, Long version, Byte ativo, Long autor_id, String endereco, String nome, String rss,
+			String sobre, String tentativas, Instant ultima_verificacao, Integer posts_dia) {
 		this.id = id;
 		this.version = version;
+		this.ativo = ativo;
+		this.autor_id = autor_id;
+		this.endereco = endereco;
+		this.nome = nome;
+		this.rss = rss;
+		this.sobre = sobre;
+		this.tentativas = tentativas;
+		this.ultima_verificacao = ultima_verificacao;
+		this.posts_dia = posts_dia;
 	}
 
-	
-	
+
+
+
+
 	public Byte getAtivo() {
 		return ativo;
 	}
