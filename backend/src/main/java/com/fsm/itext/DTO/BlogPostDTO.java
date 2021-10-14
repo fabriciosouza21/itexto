@@ -3,6 +3,8 @@ package com.fsm.itext.DTO;
 import java.io.Serializable;
 import java.time.Instant;
 
+import com.fsm.itext.entities.BlogPost;
+
 public class BlogPostDTO implements Serializable{
 	private static final long serialVersionUID = 1L;
 	
@@ -47,6 +49,27 @@ public class BlogPostDTO implements Serializable{
 		this.comentarios = comentarios;
 		this.thumbnail = thumbnail;
 	}
+	
+	public BlogPostDTO(BlogPost entity) {
+		super();
+		this.id = entity.getId();
+		this.version = entity.getVersion();
+		this.cliques = entity.getCliques();
+		this.resumo = entity.getResumo();
+		this.data_inclusao = entity.getData_inclusao();
+		this.data_publicacao = entity.getData_publicacao();
+		this.site_id = entity.getSite_id();
+		this.titulo = entity.getTitulo();
+		this.url = entity.getUrl();
+		this.votos_negativos = entity.getVotos_negativos();
+		this.votos_positivos = entity.getVotos_positivos();
+		this.ativo = entity.getAtivo();
+		this.tentativas = entity.getTentativas();
+		this.favoritos = entity.getFavoritos();
+		this.comentarios = entity.getComentarios();
+		this.thumbnail = entity.getThumbnail();
+	}
+	
 	public Long getId() {
 		return id;
 	}

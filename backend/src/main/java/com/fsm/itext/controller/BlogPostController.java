@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.fsm.itext.entities.BlogPost;
+import com.fsm.itext.DTO.BlogPostDTO;
 import com.fsm.itext.services.BlogPostService;
 
 @RestController
@@ -18,9 +18,9 @@ public class BlogPostController {
 	
 	
 	@GetMapping(value = "/{id}")
-	public ResponseEntity<BlogPost > findById (@PathVariable Long id){
-		BlogPost users = service.findById(id);
-		return ResponseEntity.ok().body(users);	
+	public ResponseEntity<BlogPostDTO > findById (@PathVariable Long id){
+		BlogPostDTO blogPost = service.findById(id);
+		return ResponseEntity.ok().body(blogPost);	
 		
 	}
 		
