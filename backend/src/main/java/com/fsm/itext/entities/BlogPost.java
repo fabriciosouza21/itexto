@@ -6,6 +6,8 @@ import java.util.Objects;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -20,7 +22,6 @@ public class BlogPost implements Serializable{
 	private String resumo;
 	private Instant data_inclusao;
 	private Instant data_publicacao;
-	private Long site_id;
 	private String titulo;
 	private String url;
 	private Integer votos_negativos;
@@ -31,8 +32,25 @@ public class BlogPost implements Serializable{
 	private Long comentarios;
 	private String thumbnail;
 	
+	@ManyToOne
+	@JoinColumn(name = "site_id")
+	private Site blog;
+	
 	public BlogPost() { }
 	
+	
+	
+	public Site getBlog() {
+		return blog;
+	}
+
+
+
+	public void setBlog(Site blog) {
+		this.blog = blog;
+	}
+
+
 
 	public Long getId() {
 		return id;
@@ -81,15 +99,6 @@ public class BlogPost implements Serializable{
 		this.data_publicacao = data_publicacao;
 	}
 
-
-	public Long getSite_id() {
-		return site_id;
-	}
-
-
-	public void setSite_id(Long site_id) {
-		this.site_id = site_id;
-	}
 
 	
 	public String getTitulo() {

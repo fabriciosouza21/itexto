@@ -1,5 +1,7 @@
 package com.fsm.itext.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -11,7 +13,7 @@ import com.fsm.itext.DTO.BlogPostDTO;
 import com.fsm.itext.services.BlogPostService;
 
 @RestController
-@RequestMapping(value = "/blogpost")
+@RequestMapping(value = "/post")
 public class BlogPostController {
 	@Autowired
 	BlogPostService service;
@@ -23,5 +25,6 @@ public class BlogPostController {
 		return ResponseEntity.ok().body(blogPost);	
 		
 	}
-		
+	
+	
 }
