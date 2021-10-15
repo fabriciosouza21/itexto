@@ -1,6 +1,5 @@
 import axios from "axios";
 import { arrow } from "components/icons";
-import { useEffect, useState } from "react";
 import { PostType } from "types/Post";
 import { BASE_URL } from "utils/request";
 interface post {
@@ -14,8 +13,7 @@ interface post {
 
 function Post(props: post) {
     let url = `post/clique/${props.id}`
-    const [valueUrl,setvalue]= useState("")
-    const alterInput =  () =>{setvalue(valueUrl)
+    const alterInput =  () =>{
         axios.get(`${BASE_URL}/${url}`)
             .then(response => {
                 const dataRequest = response.data as PostType;
@@ -25,14 +23,7 @@ function Post(props: post) {
             
     
     }
-    useEffect(()=>{
-    
-        axios.get(`${BASE_URL}/${url}`)
-            .then(response => {
-                const dataRequest = response.data as PostType;
-                setvalue(dataRequest.url)   
-            });
-    }, []);
+
     return (
         <div className="container">
             <div className="row justify-content-center">
@@ -42,10 +33,10 @@ function Post(props: post) {
                 <p>{props.resumo}</p>
             </div>
             <div>
-                <img src={props.thumbnail} alt="" />
+                <img src={props.thumbnail} alt="" width="40%" height="60%"  />
             </div>
 
-            <button className="btn btn-primary " value={valueUrl} onClick={alterInput} >
+            <button className="btn btn-primary " onClick={alterInput} >
                 Ir Ate a Pagina!
             </button>
 

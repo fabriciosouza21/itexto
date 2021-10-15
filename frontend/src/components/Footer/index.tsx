@@ -1,8 +1,9 @@
+import logo from 'assets/images/itexto.png'
 function Footer() {
     return (
         <footer className="footer mt-auto py-3 bg-dark">
             <div className="container">
-                <p className="text-light">o so para não fica sem footer</p>
+                <img src={logo}  alt="logo" width="120" />
             </div>
         </footer>
     );
