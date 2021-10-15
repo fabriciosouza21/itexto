@@ -16,6 +16,7 @@ import org.springframework.test.context.junit.jupiter.SpringExtension;
 import com.fsm.itext.DTO.BlogPostDTO;
 import com.fsm.itext.entities.BlogPost;
 import com.fsm.itext.repositories.BlogPostRepository;
+import com.fsm.itext.services.exception.NotFoundException;
 import com.fsm.itext.tests.Factory;
 
 @ExtendWith(SpringExtension.class)
@@ -31,8 +32,7 @@ public class BlogPostServiceTest {
 	private BlogPostService service;
 	
 	@Mock
-	private BlogPostRepository repository;
-	
+	private BlogPostRepository repository;	
 
 	
 	@BeforeEach
@@ -46,8 +46,8 @@ public class BlogPostServiceTest {
 		
 		Mockito.when(repository.findByResumoOrTituloContaining(seach,Sort.by(Sort.Direction.DESC,"dataPublicacao"))).thenReturn(posts);
 		Mockito.when(repository.findById(nonExistingId)).thenReturn(Optional.empty());
-		
 		Mockito.when(repository.findById(existingId)).thenReturn(Optional.of(post));
+		
 	
 	}
 	
@@ -73,10 +73,11 @@ public class BlogPostServiceTest {
 
 	}
 	
+	@Test
 	public void cliqueDeveGerarNotFoundExceptionQuandoIdNaoExistir() {
 				
 		Assertions.assertThrows(NotFoundException.class,()->{
-			service.clique(existingId);
+			service.clique(nonExistingId);
 		});
 		Mockito.verify(repository).findById(nonExistingId);
 
