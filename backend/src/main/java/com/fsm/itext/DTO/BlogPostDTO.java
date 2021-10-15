@@ -20,13 +20,13 @@ public class BlogPostDTO implements Serializable{
 	private Long favoritos;
 	private Long comentarios;
 	private String url;
-	private BuscarPostTextoSiteDTO blog;
+	private SiteDTO blog;
 	
 	public BlogPostDTO() {}
 
 	public BlogPostDTO(Long id, String titulo, String resumo, Integer cliques, Instant data_inclusao,
 			Instant data_publicacao, Integer votos_negativos, Integer votos_positivos, Long favoritos, Long comentarios,
-			String url, BuscarPostTextoSiteDTO blog) {
+			String url, SiteDTO blog) {
 		super();
 		this.id = id;
 		this.titulo = titulo;
@@ -54,7 +54,7 @@ public class BlogPostDTO implements Serializable{
 		this.votosPositivos = entity.getVotosPositivos();
 		this.favoritos = entity.getFavoritos();
 		this.comentarios = entity.getComentarios();	
-		this.blog = new BuscarPostTextoSiteDTO(entity.getBlog());
+		this.blog = new SiteDTO(entity.getBlog());
 	}
 
 	public BlogPostDTO(BlogPost entity, String url) {
@@ -150,11 +150,11 @@ public class BlogPostDTO implements Serializable{
 		this.url = url;
 	}
 
-	public BuscarPostTextoSiteDTO getBlog() {
+	public SiteDTO getBlog() {
 		return blog;
 	}
 
-	public void setBlog(BuscarPostTextoSiteDTO blog) {
+	public void setBlog(SiteDTO blog) {
 		this.blog = blog;
 	}
 	

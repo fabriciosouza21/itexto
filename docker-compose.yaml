@@ -1,0 +1,16 @@
+version: '3.3'
+
+services:
+  backend: 
+    image: fabricio21777/itextospring 
+    ports: 
+      - "8080:8080"
+    restart: always
+  frontend: 
+    image: fabio21777/itextoreact 
+    ports: 
+      - "3000:3000"
+    restart: always
+
+
+

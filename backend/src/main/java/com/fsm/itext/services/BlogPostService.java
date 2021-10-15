@@ -22,11 +22,13 @@ public class BlogPostService {
 	
 	@Transactional(readOnly = true)
 	public BlogPostDTO  clique(Long id) {
-		Optional<BlogPost> blogPost = repository.findById(id);		
-		BlogPost entity = blogPost.orElseThrow(() -> new NotFoundException("entitidade não foi encontrada"));
-		entity.setCliques(entity.getCliques()+1);
-		//repository.save(entity)
-		return new BlogPostDTO( entity, entity.getUrl());
+			Optional<BlogPost> blogPost = repository.findById(id);		
+			BlogPost entity = blogPost.orElseThrow(() -> new NotFoundException("entitidade não foi encontrada"));
+			entity.setCliques(entity.getCliques()+1);
+			//repository.save(entity)
+			return new BlogPostDTO( entity, entity.getUrl());
+			
+
 	}
 	@Transactional(readOnly = true)
 	public List<BlogPostDTO> buscarPostTexto(String seach) {
