@@ -1,0 +1,1 @@
+export const BASE_URL = 'https://api.devall.com.br/api/v1/'
