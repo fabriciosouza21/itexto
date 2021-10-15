@@ -54,6 +54,17 @@ public class BlogPostControlerIT {
 		
 	}
 	
+	@Test
+	public void cliqueIdDeveRetornarNotFoundQuandoIdNaoExisti() throws Exception {
+		
+		ResultActions result =
+				mockMvc.perform(get("/post/clique/1000000000")
+					.contentType(MediaType.APPLICATION_JSON));
+
+		result.andExpect(status().isNotFound());		
+		
+	}
+	
 }
 	
 
