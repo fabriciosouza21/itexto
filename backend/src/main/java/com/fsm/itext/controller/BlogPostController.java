@@ -11,7 +11,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.fsm.itext.DTO.BlogPostDTO;
-import com.fsm.itext.DTO.BuscarPostTextoBlogPostDTO;
 import com.fsm.itext.services.BlogPostService;
 
 @RestController
@@ -22,14 +21,14 @@ public class BlogPostController {
 	
 	
 	@GetMapping(value = "/clique/{id}")
-	public ResponseEntity<BuscarPostTextoBlogPostDTO> findById (@PathVariable Long id){
-		BuscarPostTextoBlogPostDTO blogPost = service.clique(id);
+	public ResponseEntity<BlogPostDTO> cliqueId (@PathVariable Long id){
+		BlogPostDTO blogPost = service.clique(id);
 		return ResponseEntity.ok().body(blogPost);	
 		
 	}
 	@GetMapping
-	public ResponseEntity<List<BuscarPostTextoBlogPostDTO>> buscarPostTexto(@RequestParam(value = "search", defaultValue = "") String seach){
-		List<BuscarPostTextoBlogPostDTO> posts = service.buscarPostTexto(seach);
+	public ResponseEntity<List<BlogPostDTO>> buscarPostTexto(@RequestParam(value = "search", defaultValue = "") String seach){
+		List<BlogPostDTO> posts = service.buscarPostTexto(seach);
 		return  ResponseEntity.ok().body(posts);
 	}
 	
