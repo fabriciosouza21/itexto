@@ -1,5 +1,6 @@
 package com.fsm.itext.repositories;
 
+import java.util.List;
 import java.util.Optional;
 
 import org.junit.jupiter.api.Assertions;
@@ -9,6 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTestDatabase;
 import org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTestDatabase.Replace;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
+import org.springframework.data.domain.Sort;
 
 import com.fsm.itext.entities.BlogPost;
 
@@ -30,7 +32,7 @@ public class BlogPostRepositoryTest {
 	}
 	
 	@Test
-	public void findByIdShouldReturnOptinalNaoVazioQuandoIdExistir() {
+	public void findByIdDeveRetornarOptinalNaoVazioQuandoIdExistir() {
 		
 		Optional<BlogPost> entity = repository.findById(existingId);
 		
@@ -38,12 +40,19 @@ public class BlogPostRepositoryTest {
 	}
 	
 	@Test
-	public void findByIdDeverRetornarOptinalVazioQuandoIdNaoExistir() {
+	public void findByIdDeveRetornarOptinalVazioQuandoIdNaoExistir() {
 		
 		Optional<BlogPost> entity = repository.findById(nonExisting);
 		
 		Assertions.assertTrue(entity.isEmpty());
 	}
 	
+	@Test 
+	public void findByResumoOrTituloContainingDeverRetornarUmaListBlogPostContendoSeach() {
+		
+		List<BlogPost> posts = repository.findByResumoOrTituloContaining(seach, Sort.by(Sort.Direction.DESC,"dataPublicacao"));
+		
+		Assertions.assertNotNull(posts);	
+	}
 
 }
