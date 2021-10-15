@@ -75,10 +75,6 @@ direcione o usuário para o site representado.
     <img src="https://raw.github.com/fabriciosouza21/itexto/main/assets/clique.png" width="400"/>
   </div>
 
-
-
-
-
 <div align="justify" >
   
    <h2 align="center"> Frontend </h2> 
@@ -95,6 +91,15 @@ disponibilizados através de padrões REST, utilizando a api do devall.
   <br>
   <br>
   <a href="https://docs.itexto.com.br/devall/">API do /dev/All</a>
+      
+  <h3>🚧 Organização de pastas do projeto </h3>
+    - Na listagem dos posts apresentados deve haver um botão ou link que, uma vez clicado,direcione o usuário para o site representado.
+        
+  <br>
+  <br>
+  <div>
+    <img src="https://raw.github.com/fabriciosouza21/itexto/main/assets/api-frontend-03.JPG" width="400"/>
+  </div>
 
   <h3>🚧 Home  </h3>
     - No momento em que a página for carregada, os últimos posts cadastrados no dev/All
@@ -102,43 +107,37 @@ deverão ser expostos.
   <br>
   <br>
   <div>
-    <img src="https://user-images.githubusercontent.com/83084256/134749186-de793542-3c50-4466-89f8-a80f4d71e282.png" width="250" height="200" />
+    <img src="https://raw.github.com/fabriciosouza21/itexto/main/assets/api-frontend-01.JPG" width="400"/>
   </div>
 
   <h3>🚧 realizar busca</h3>
-    - Deve ser possível realizar a busca por posts no dev/All por assunto
+    - Deve ser possível realizar a busca por posts no dev/All por assunto, com um botão com o link do post
         
   <br>
   <br>
   <div>
-    <img src="https://user-images.githubusercontent.com/83084256/134749408-9f491e77-bbfe-4705-9c01-3f0eac00afcf.png" width="250" height="200"/>
+    <img src="https://raw.github.com/fabriciosouza21/itexto/main/assets/api-frontend-02.JPG" width="400"/>
   </div>
 
-    <h3>🚧 botão ou link </h3>
-    - Deve ser possível realizar a busca por posts no dev/All por assunto
-        
-  <br>
-  <br>
-  <div>
-    <img src="https://user-images.githubusercontent.com/83084256/134749408-9f491e77-bbfe-4705-9c01-3f0eac00afcf.png" width="250" height="200"/>
-  </div>
+
 
 
 
 <h2 id="tecnologias">🚀 Tecnologias</h2> 
 
 - Java 11
-- React js
 - Spring Boot
 - JPA
 - Maven
 - Mysql
+- Javascript
+- React js
 - Docker
 
 
 <h2 id="execucao">🕹 Execução</h2> 
 
-Pré-requisitos java maven: **Java 11 e Postman (ou a API Client que preferir)**
+Pré-requisitos backend-java maven: **Java 11 e Postman (ou a API Client que preferir)**
 
 ```bash
 # Clonar repositório
@@ -149,7 +148,19 @@ cd itexto-backend
 ./mvnw spring-boot:run
 
 ```
-Pré-requisitos java docker: **Docker e Postman (ou a API Client que preferir)**
+Pré-requisitos frontend yarn: **Node versão recente
+```bash
+# Clonar repositório
+git clone https://github.com/fabriciosouza21/itexto
+# Entrar na pasta abaixo
+cd itexto-frontend
+# Instalar yarn
+npm npm install --global yarn
+# Instalar yarn
+yarn start
+```
+  
+Pré-requisitos backend-java docker: **Docker e Postman (ou a API Client que preferir)**
 
 ```bash
 #Executar docker
