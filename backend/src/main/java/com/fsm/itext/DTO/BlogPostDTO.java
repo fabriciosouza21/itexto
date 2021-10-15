@@ -34,12 +34,12 @@ public class BlogPostDTO implements Serializable{
 		this.version = entity.getVersion();
 		this.cliques = entity.getCliques();
 		this.resumo = entity.getResumo();
-		this.data_inclusao = entity.getData_inclusao();
-		this.data_publicacao = entity.getData_publicacao();
+		this.data_inclusao = entity.getDataInclusao();
+		this.data_publicacao = entity.getDataPublicacao();
 		this.titulo = entity.getTitulo();
 		this.url = entity.getUrl();
-		this.votos_negativos = entity.getVotos_negativos();
-		this.votos_positivos = entity.getVotos_positivos();
+		this.votos_negativos = entity.getVotosNegativos();
+		this.votos_positivos = entity.getVotosPositivos();
 		this.ativo = entity.getAtivo();
 		this.tentativas = entity.getTentativas();
 		this.favoritos = entity.getFavoritos();

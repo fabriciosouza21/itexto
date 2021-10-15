@@ -48,13 +48,12 @@ public class BuscarPostTextoBlogPostDTO implements Serializable{
 		this.titulo = entity.getTitulo();
 		this.resumo = entity.getResumo();
 		this.cliques = entity.getCliques();
-		this.data_inclusao = entity.getData_inclusao();
-		this.data_publicacao = entity.getData_publicacao();
-		this.votos_negativos = entity.getVotos_negativos();
-		this.votos_positivos = entity.getVotos_positivos();
+		this.data_inclusao = entity.getDataInclusao();
+		this.data_publicacao = entity.getDataPublicacao();
+		this.votos_negativos = entity.getVotosNegativos();
+		this.votos_positivos = entity.getVotosPositivos();
 		this.favoritos = entity.getFavoritos();
-		this.comentarios = entity.getComentarios();
-		this.url = entity.getUrl();
+		this.comentarios = entity.getComentarios();	
 		this.blog = new BuscarPostTextoSiteDTO(entity.getBlog());
 	}
 

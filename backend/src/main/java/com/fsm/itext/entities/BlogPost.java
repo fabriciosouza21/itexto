@@ -20,12 +20,12 @@ public class BlogPost implements Serializable{
 	private Long version;	
 	private Integer cliques;
 	private String resumo;
-	private Instant data_inclusao;
-	private Instant data_publicacao;
+	private Instant dataInclusao;
+	private Instant dataPublicacao;
 	private String titulo;
 	private String url;
-	private Integer votos_negativos;
-	private Integer votos_positivos;
+	private Integer votosNegativos;
+	private Integer votosPositivos;
 	private Boolean ativo;
 	private Integer tentativas;
 	private Long favoritos;
@@ -80,23 +80,23 @@ public class BlogPost implements Serializable{
 	}
 
 	
-	public Instant getData_inclusao() {
-		return data_inclusao;
+	public Instant getDataInclusao() {
+		return dataInclusao;
 	}
 
 
-	public void setData_inclusao(Instant data_inclusao) {
-		this.data_inclusao = data_inclusao;
+	public void setDataInclusao(Instant data_inclusao) {
+		this.dataInclusao = data_inclusao;
 	}
 
 
-	public Instant getData_publicacao() {
-		return data_publicacao;
+	public Instant getDataPublicacao() {
+		return dataPublicacao;
 	}
 
 
-	public void setData_publicacao(Instant data_publicacao) {
-		this.data_publicacao = data_publicacao;
+	public void setDataPublicacao(Instant data_publicacao) {
+		this.dataPublicacao = data_publicacao;
 	}
 
 
@@ -117,20 +117,20 @@ public class BlogPost implements Serializable{
 		this.url = url;
 	}
 
-	public Integer getVotos_negativos() {
-		return votos_negativos;
+	public Integer getVotosNegativos() {
+		return votosNegativos;
 	}
 
-	public void setVotos_negativos(Integer votos_negativos) {
-		this.votos_negativos = votos_negativos;
+	public void setVotosNegativos(Integer votos_negativos) {
+		this.votosNegativos = votos_negativos;
 	}
 
-	public Integer getVotos_positivos() {
-		return votos_positivos;
+	public Integer getVotosPositivos() {
+		return votosPositivos;
 	}
 
-	public void setVotos_positivos(Integer votos_positivos) {
-		this.votos_positivos = votos_positivos;
+	public void setVotosPositivos(Integer votos_positivos) {
+		this.votosPositivos = votos_positivos;
 	}
 	
 	public Boolean getAtivo() {
