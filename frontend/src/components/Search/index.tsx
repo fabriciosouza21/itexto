@@ -79,7 +79,7 @@ function Seach() {
             lista.shift()
             setData({post:lista})
         });
-    }, []);
+    }, [url]);
     return (
         <>
         <div className = "row d-flex justify-content-center">
