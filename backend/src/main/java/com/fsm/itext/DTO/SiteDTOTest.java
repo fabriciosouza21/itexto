@@ -1,23 +1,16 @@
-package com.fsm.itext.entities;
+package com.fsm.itext.DTO;
 
+import java.io.Serializable;
 import java.time.Instant;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
-import javax.persistence.Table;
+import com.fsm.itext.entities.Site;
 
-@Entity
-@Table(name = "site")
-public class Site {
-	@Id
+public class SiteDTOTest implements Serializable {
+	private static final long serialVersionUID = 1L;
 	private Long id;
 	private Long version;
 	private Boolean ativo;
-	@ManyToOne
-	@JoinColumn(name = "autor_id")
-	private Autor autor;
+	private AutorDTO autor;
 	private String endereco;
 	private String nome;
 	private String rss;
@@ -26,13 +19,30 @@ public class Site {
 	private Instant ultima_verificacao;
 	private Integer posts_dia;
 	
-	
-	public Site() {
-		
+
+	public SiteDTOTest() {
+		super();
 	}
 	
-	public Site(Long id, Long version, Boolean ativo, Autor autor_id, String endereco, String nome, String rss,
+	public SiteDTOTest(Site entity) {
+		this.id = entity.getId();
+		this.version = entity.getVersion();
+		this.ativo = entity.getAtivo();
+		this.autor = new AutorDTO(entity.getAutor_id());
+		this.endereco = entity.getEndereco();
+		this.nome = entity.getNome();
+		this.rss = entity.getRss();
+		this.sobre = entity.getSobre();
+		this.tentativas = entity.getTentativas();
+		this.ultima_verificacao = entity.getUltima_verificacao();
+		this.posts_dia = entity.getPosts_dia();
+	}
+	
+	
+
+	public SiteDTOTest(Long id, Long version, Boolean ativo, AutorDTO autor_id, String endereco, String nome, String rss,
 			String sobre, Integer tentativas, Instant ultima_verificacao, Integer posts_dia) {
+		super();
 		this.id = id;
 		this.version = version;
 		this.ativo = ativo;
@@ -46,12 +56,18 @@ public class Site {
 		this.posts_dia = posts_dia;
 	}
 
+	public Long getId() {
+		return id;
+	}
 
+	public Long getVersion() {
+		return version;
+	}
 	public Boolean getAtivo() {
 		return ativo;
 	}
 
-	public Autor getAutor_id() {
+	public AutorDTO getAutor_id() {
 		return autor;
 	}
 
@@ -81,14 +97,6 @@ public class Site {
 
 	public Integer getPosts_dia() {
 		return posts_dia;
-	}
-
-	public Long getId() {
-		return id;
-	}
-
-	public Long getVersion() {
-		return version;
 	}
 
 }

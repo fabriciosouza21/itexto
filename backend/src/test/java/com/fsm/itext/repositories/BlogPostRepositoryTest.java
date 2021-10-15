@@ -48,7 +48,7 @@ public class BlogPostRepositoryTest {
 	}
 	
 	@Test 
-	public void findByResumoOrTituloContainingDeverRetornarUmaListBlogPostContendoSeach() {
+	public void 	gDeverRetornarUmaListBlogPostContendoSeach() {
 		
 		List<BlogPost> posts = repository.findByResumoOrTituloContaining(seach, Sort.by(Sort.Direction.DESC,"dataPublicacao"));
 		

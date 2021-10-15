@@ -6,6 +6,7 @@ public class AutorDTO {
 	private Long id;
 	private String nome;
 	
+	public AutorDTO() { }
 	
 	public AutorDTO(Autor autorEntity) {
 		this.id = autorEntity.getId();

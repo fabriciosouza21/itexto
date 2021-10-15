@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.fsm.itext.DTO.SiteDTO;
+import com.fsm.itext.DTO.SiteDTOTest;
 import com.fsm.itext.services.SiteService;
 
 @RestController
@@ -16,7 +16,7 @@ public class SiteController {
 	@Autowired
 	SiteService siteService;
 	@GetMapping(value = "/{id}")
-	public ResponseEntity<SiteDTO>findByid(@PathVariable Long id){
-		return ResponseEntity.ok(new SiteDTO(siteService.findById(id))) ;
+	public ResponseEntity<SiteDTOTest>findByid(@PathVariable Long id){
+		return ResponseEntity.ok(new SiteDTOTest(siteService.findById(id))) ;
 	}
 }
