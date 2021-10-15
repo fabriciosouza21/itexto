@@ -6,6 +6,8 @@ import java.util.Objects;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -18,21 +20,60 @@ public class BlogPost implements Serializable{
 	private Long version;	
 	private Integer cliques;
 	private String resumo;
-	private Instant data_inclusao;
-	private Instant data_publicacao;
-	private Long site_id;
+	private Instant dataInclusao;
+	private Instant dataPublicacao;
 	private String titulo;
 	private String url;
-	private Integer votos_negativos;
-	private Integer votos_positivos;
+	private Integer votosNegativos;
+	private Integer votosPositivos;
 	private Boolean ativo;
 	private Integer tentativas;
 	private Long favoritos;
 	private Long comentarios;
 	private String thumbnail;
 	
+	@ManyToOne
+	@JoinColumn(name = "site_id")
+	private Site blog;
+	
 	public BlogPost() { }
 	
+		
+	public BlogPost(Long id, Long version, Integer cliques, String resumo, Instant dataInclusao, Instant dataPublicacao,
+			String titulo, String url, Integer votosNegativos, Integer votosPositivos, Boolean ativo,
+			Integer tentativas, Long favoritos, Long comentarios, String thumbnail, Site blog) {
+		super();
+		this.id = id;
+		this.version = version;
+		this.cliques = cliques;
+		this.resumo = resumo;
+		this.dataInclusao = dataInclusao;
+		this.dataPublicacao = dataPublicacao;
+		this.titulo = titulo;
+		this.url = url;
+		this.votosNegativos = votosNegativos;
+		this.votosPositivos = votosPositivos;
+		this.ativo = ativo;
+		this.tentativas = tentativas;
+		this.favoritos = favoritos;
+		this.comentarios = comentarios;
+		this.thumbnail = thumbnail;
+		this.blog = blog;
+	}
+
+
+
+	public Site getBlog() {
+		return blog;
+	}
+
+
+
+	public void setBlog(Site blog) {
+		this.blog = blog;
+	}
+
+
 
 	public Long getId() {
 		return id;
@@ -62,34 +103,25 @@ public class BlogPost implements Serializable{
 	}
 
 	
-	public Instant getData_inclusao() {
-		return data_inclusao;
+	public Instant getDataInclusao() {
+		return dataInclusao;
 	}
 
 
-	public void setData_inclusao(Instant data_inclusao) {
-		this.data_inclusao = data_inclusao;
+	public void setDataInclusao(Instant data_inclusao) {
+		this.dataInclusao = data_inclusao;
 	}
 
 
-	public Instant getData_publicacao() {
-		return data_publicacao;
+	public Instant getDataPublicacao() {
+		return dataPublicacao;
 	}
 
 
-	public void setData_publicacao(Instant data_publicacao) {
-		this.data_publicacao = data_publicacao;
+	public void setDataPublicacao(Instant data_publicacao) {
+		this.dataPublicacao = data_publicacao;
 	}
 
-
-	public Long getSite_id() {
-		return site_id;
-	}
-
-
-	public void setSite_id(Long site_id) {
-		this.site_id = site_id;
-	}
 
 	
 	public String getTitulo() {
@@ -108,20 +140,20 @@ public class BlogPost implements Serializable{
 		this.url = url;
 	}
 
-	public Integer getVotos_negativos() {
-		return votos_negativos;
+	public Integer getVotosNegativos() {
+		return votosNegativos;
 	}
 
-	public void setVotos_negativos(Integer votos_negativos) {
-		this.votos_negativos = votos_negativos;
+	public void setVotosNegativos(Integer votos_negativos) {
+		this.votosNegativos = votos_negativos;
 	}
 
-	public Integer getVotos_positivos() {
-		return votos_positivos;
+	public Integer getVotosPositivos() {
+		return votosPositivos;
 	}
 
-	public void setVotos_positivos(Integer votos_positivos) {
-		this.votos_positivos = votos_positivos;
+	public void setVotosPositivos(Integer votos_positivos) {
+		this.votosPositivos = votos_positivos;
 	}
 	
 	public Boolean getAtivo() {
