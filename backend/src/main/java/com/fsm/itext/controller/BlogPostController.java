@@ -21,14 +21,14 @@ public class BlogPostController {
 	BlogPostService service;
 	
 	
-	@GetMapping(value = "/{id}")
+	@GetMapping(value = "/clique/{id}")
 	public ResponseEntity<BlogPostDTO > findById (@PathVariable Long id){
-		BlogPostDTO blogPost = service.findById(id);
+		BlogPostDTO blogPost = service.clique(id);
 		return ResponseEntity.ok().body(blogPost);	
 		
 	}
 	@GetMapping
-	public ResponseEntity<List<BuscarPostTextoBlogPostDTO>> buscarPostTexto(@RequestParam(value = "search", defaultValue = " ") String seach){
+	public ResponseEntity<List<BuscarPostTextoBlogPostDTO>> buscarPostTexto(@RequestParam(value = "search", defaultValue = "") String seach){
 		List<BuscarPostTextoBlogPostDTO> posts = service.buscarPostTexto(seach);
 		return  ResponseEntity.ok().body(posts);
 	}

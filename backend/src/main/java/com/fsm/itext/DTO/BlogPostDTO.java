@@ -27,7 +27,14 @@ public class BlogPostDTO implements Serializable{
 	
 	public BlogPostDTO() { }
 	
+	public BlogPostDTO(BlogPost entity, String url) {
+		this(entity);
+		this.url = url;
+	}
+
 	
+
+
 	public BlogPostDTO(BlogPost entity) {
 		super();
 		this.id = entity.getId();
@@ -48,6 +55,8 @@ public class BlogPostDTO implements Serializable{
 		this.setBlogId(entity.getBlog().getId());
 	}
 	
+
+
 	public Long getId() {
 		return id;
 	}

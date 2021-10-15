@@ -21,13 +21,16 @@ public class BlogPostService {
 	private BlogPostRepository repository;
 	
 	@Transactional(readOnly = true)
-	public BlogPostDTO  findById(Long id) {
+	public BuscarPostTextoBlogPostDTO  clique(Long id) {
 		Optional<BlogPost> blogPost = repository.findById(id);
-		return new BlogPostDTO( blogPost.get());
+		BlogPost entity = blogPost.get();
+		entity.setCliques(entity.getCliques()+1);
+		//repository.save(entity)
+		return new BuscarPostTextoBlogPostDTO( entity, entity.getUrl());
 	}
 	@Transactional(readOnly = true)
 	public List<BuscarPostTextoBlogPostDTO> buscarPostTexto(String seach) {
-		List<BlogPost> posts = repository.findByResumoOrTituloContaining(seach,seach,Sort.by(Sort.Direction.DESC,"dataPublicacao"));
+		List<BlogPost> posts = repository.findByResumoOrTituloContaining(seach,Sort.by(Sort.Direction.DESC,"dataPublicacao"));
 
 		return posts.stream().map( x -> new BuscarPostTextoBlogPostDTO(x)).collect(Collectors.toList());
 	}	

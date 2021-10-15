@@ -57,6 +57,11 @@ public class BuscarPostTextoBlogPostDTO implements Serializable{
 		this.blog = new BuscarPostTextoSiteDTO(entity.getBlog());
 	}
 
+	public BuscarPostTextoBlogPostDTO(BlogPost entity, String url) {
+		this(entity);
+		this.setUrl(url);
+	}
+
 	public Long getId() {
 		return id;
 	}
