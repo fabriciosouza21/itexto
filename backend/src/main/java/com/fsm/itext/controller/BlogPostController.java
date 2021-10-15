@@ -22,8 +22,8 @@ public class BlogPostController {
 	
 	
 	@GetMapping(value = "/clique/{id}")
-	public ResponseEntity<BlogPostDTO > findById (@PathVariable Long id){
-		BlogPostDTO blogPost = service.clique(id);
+	public ResponseEntity<BuscarPostTextoBlogPostDTO> findById (@PathVariable Long id){
+		BuscarPostTextoBlogPostDTO blogPost = service.clique(id);
 		return ResponseEntity.ok().body(blogPost);	
 		
 	}
