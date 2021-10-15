@@ -148,30 +148,32 @@ cd itexto-backend
 ./mvnw spring-boot:run
 
 ```
-Pré-requisitos frontend yarn: **Node versão recente
+Pré-requisitos frontend yarn: **Node versão recentes**
 ```bash
 # Clonar repositório
 git clone https://github.com/fabriciosouza21/itexto
 # Entrar na pasta abaixo
 cd itexto-frontend
 # Instalar yarn
-npm npm install --global yarn
-# Instalar yarn
-yarn start
-```
-  
+npm install --global yarn
+# Baixar dependências do projeto
+yarn install
+# Executar o projeto
+ yarn start
+```  
 Pré-requisitos backend-java docker: **Docker e Postman (ou a API Client que preferir)**
 
 ```bash
 #Executar docker
-docker run fabricio21777/itextospring
+docker run -d -p 8080:8080 --rm fabricio21777/itextospring
+```
+Pré-requisitos frontend-node docker: **Docker**
+
+```bash
+#Executar docker
+docker run -d -p 3000:3000 --rm fabio21777/itextoreact
 ```
 
 
 
 
-<h2 id="desenvolvedor">Desenvolvedor</h2> 
-  <img style="border-radius: 50%" border="50%" src="" width="100" height="100" /> <br>
-<a href="">
-  <img src= />
-</a>
