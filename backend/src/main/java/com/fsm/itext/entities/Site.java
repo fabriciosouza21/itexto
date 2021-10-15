@@ -12,13 +12,13 @@ public class Site {
 	@Id
 	private Long id;
 	private Long version;
-	private Byte ativo;
+	private Boolean ativo;
 	private Long autor_id;
 	private String endereco;
 	private String nome;
 	private String rss;
 	private String sobre;
-	private String tentativas;
+	private Integer tentativas;
 	private Instant ultima_verificacao;
 	private Integer posts_dia;
 	
@@ -27,8 +27,8 @@ public class Site {
 		
 	}
 	
-	public Site(Long id, Long version, Byte ativo, Long autor_id, String endereco, String nome, String rss,
-			String sobre, String tentativas, Instant ultima_verificacao, Integer posts_dia) {
+	public Site(Long id, Long version, Boolean ativo, Long autor_id, String endereco, String nome, String rss,
+			String sobre, Integer tentativas, Instant ultima_verificacao, Integer posts_dia) {
 		this.id = id;
 		this.version = version;
 		this.ativo = ativo;
@@ -43,10 +43,7 @@ public class Site {
 	}
 
 
-
-
-
-	public Byte getAtivo() {
+	public Boolean getAtivo() {
 		return ativo;
 	}
 
@@ -70,7 +67,7 @@ public class Site {
 		return sobre;
 	}
 
-	public String getTentativas() {
+	public Integer getTentativas() {
 		return tentativas;
 	}
 

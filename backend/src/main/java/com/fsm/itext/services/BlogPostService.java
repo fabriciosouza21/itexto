@@ -12,6 +12,7 @@ import org.springframework.transaction.annotation.Transactional;
 import com.fsm.itext.DTO.BlogPostDTO;
 import com.fsm.itext.entities.BlogPost;
 import com.fsm.itext.repositories.BlogPostRepository;
+import com.fsm.itext.services.exception.NotFoundException;
 
 @Service
 public class BlogPostService {
@@ -21,8 +22,8 @@ public class BlogPostService {
 	
 	@Transactional(readOnly = true)
 	public BlogPostDTO  clique(Long id) {
-		Optional<BlogPost> blogPost = repository.findById(id);
-		BlogPost entity = blogPost.get();
+		Optional<BlogPost> blogPost = repository.findById(id);		
+		BlogPost entity = blogPost.orElseThrow(() -> new NotFoundException("entitidade não foi encontrada"));
 		entity.setCliques(entity.getCliques()+1);
 		//repository.save(entity)
 		return new BlogPostDTO( entity, entity.getUrl());

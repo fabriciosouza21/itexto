@@ -38,8 +38,31 @@ public class BlogPost implements Serializable{
 	
 	public BlogPost() { }
 	
-	
-	
+		
+	public BlogPost(Long id, Long version, Integer cliques, String resumo, Instant dataInclusao, Instant dataPublicacao,
+			String titulo, String url, Integer votosNegativos, Integer votosPositivos, Boolean ativo,
+			Integer tentativas, Long favoritos, Long comentarios, String thumbnail, Site blog) {
+		super();
+		this.id = id;
+		this.version = version;
+		this.cliques = cliques;
+		this.resumo = resumo;
+		this.dataInclusao = dataInclusao;
+		this.dataPublicacao = dataPublicacao;
+		this.titulo = titulo;
+		this.url = url;
+		this.votosNegativos = votosNegativos;
+		this.votosPositivos = votosPositivos;
+		this.ativo = ativo;
+		this.tentativas = tentativas;
+		this.favoritos = favoritos;
+		this.comentarios = comentarios;
+		this.thumbnail = thumbnail;
+		this.blog = blog;
+	}
+
+
+
 	public Site getBlog() {
 		return blog;
 	}

@@ -10,13 +10,13 @@ public class BuscarPostTextoSiteDTO implements Serializable{
 
 	private Long id;
 	private String nome;
-	private Byte ativo;
+	private Boolean ativo;
 	private String url;
 	private Long AutorId;
 	
 	public BuscarPostTextoSiteDTO() {}
 
-	public BuscarPostTextoSiteDTO(Long id, String nome, Byte ativo, Long autorId, String url) {
+	public BuscarPostTextoSiteDTO(Long id, String nome, Boolean ativo, Long autorId, String url) {
 		super();
 		this.id = id;
 		this.nome = nome;
@@ -49,11 +49,11 @@ public class BuscarPostTextoSiteDTO implements Serializable{
 		this.nome = nome;
 	}
 
-	public Byte getAtivo() {
+	public Boolean getAtivo() {
 		return ativo;
 	}
 
-	public void setAtivo(Byte ativo) {
+	public void setAtivo(Boolean ativo) {
 		this.ativo = ativo;
 	}
 

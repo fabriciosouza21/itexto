@@ -9,13 +9,13 @@ public class SiteDTO implements Serializable {
 	private static final long serialVersionUID = 1L;
 	private Long id;
 	private Long version;
-	private Byte ativo;
+	private Boolean ativo;
 	private Long autor_id;
 	private String endereco;
 	private String nome;
 	private String rss;
 	private String sobre;
-	private String tentativas;
+	private Integer tentativas;
 	private Instant ultima_verificacao;
 	private Integer posts_dia;
 	
@@ -40,8 +40,8 @@ public class SiteDTO implements Serializable {
 	
 	
 
-	public SiteDTO(Long id, Long version, Byte ativo, Long autor_id, String endereco, String nome, String rss,
-			String sobre, String tentativas, Instant ultima_verificacao, Integer posts_dia) {
+	public SiteDTO(Long id, Long version, Boolean ativo, Long autor_id, String endereco, String nome, String rss,
+			String sobre, Integer tentativas, Instant ultima_verificacao, Integer posts_dia) {
 		super();
 		this.id = id;
 		this.version = version;
@@ -63,7 +63,7 @@ public class SiteDTO implements Serializable {
 	public Long getVersion() {
 		return version;
 	}
-	public Byte getAtivo() {
+	public Boolean getAtivo() {
 		return ativo;
 	}
 
@@ -87,7 +87,7 @@ public class SiteDTO implements Serializable {
 		return sobre;
 	}
 
-	public String getTentativas() {
+	public Integer getTentativas() {
 		return tentativas;
 	}
 
