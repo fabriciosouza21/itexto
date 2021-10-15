@@ -33,7 +33,7 @@ function Post(props: post) {
                 <p>{props.resumo}</p>
             </div>
             <div>
-                <img src={props.thumbnail} alt="" />
+                <img src={props.thumbnail} alt="" width="40%" height="60%"  />
             </div>
 
             <button className="btn btn-primary " onClick={alterInput} >
