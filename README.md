@@ -46,13 +46,13 @@ direcione o usuário para o site representado.
   <h2 align="center"> Backend </h2> 
     <h3> Database </h3>
 
-   <img src="https://raw.github.com/fabriciosouza21/itexto/main/assets/mysql.PNG" width="400px"/>
+   <img src="https://raw.github.com/fabriciosouza21/itexto/main/assets/mysql.PNG" width="500px"/>
 
   <h3>🚧 implementação </h3>
   Iniciei criando a estrutura basica de pacotes entities, repositories, services e controllers, baseados na implementação do banco de dados, utilizando o padrão em camadas para estrutura o projeto.
   <br>
   <br>
-  <img src="https://raw.github.com/fabriciosouza21/itexto/main/assets/modelo.PNG" width="400px"/>
+  <img src="https://raw.github.com/fabriciosouza21/itexto/main/assets/modelo.PNG" width="500px"/>
 
   <h3>🚧 End point GET /post </h3>
     - A busca textual pesquisa por similaridade (like) posts cujos campos titulo ou resumo correspondam ao valor fornecido.
