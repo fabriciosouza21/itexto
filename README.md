@@ -133,6 +133,9 @@ deverão ser expostos.
 - Javascript
 - React js
 - Docker
+- bootstrap
+- css
+- html
 
 
 <h2 id="execucao">🕹 Execução</h2> 
@@ -141,7 +144,7 @@ Pré-requisitos backend-java maven: **Java 11 e Postman (ou a API Client que pre
 
 ```bash
 # Clonar repositório
-git clone https://github.com/fabriciosouza21/itexto
+git clone https://github.com/fabio21777/itexto
 # Entrar na pasta abaixo
 cd itexto-backend
 # Executar o projeto
@@ -151,7 +154,7 @@ cd itexto-backend
 Pré-requisitos frontend yarn: **Node versão recentes**
 ```bash
 # Clonar repositório
-git clone https://github.com/fabriciosouza21/itexto
+git clone https://github.com/fabio21777/itexto
 # Entrar na pasta abaixo
 cd itexto-frontend
 # Instalar yarn
