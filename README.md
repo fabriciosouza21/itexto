@@ -62,7 +62,7 @@ direcione o usuário para o site representado.
   <br>
   <br>
   <div>
-    <img src="https://raw.github.com/fabriciosouza21/itexto/main/assets/response-api.png" width="400" />
+    <img src="https://raw.github.com/fabriciosouza21/itexto/main/assets/response-api.png" width="500" />
   </div>
 
   <h3>🚧 End point GET post/clique/{id}</h3>
@@ -72,7 +72,7 @@ direcione o usuário para o site representado.
   <br>
   <br>
   <div>
-    <img src="https://raw.github.com/fabriciosouza21/itexto/main/assets/clique.png" width="400"/>
+    <img src="https://raw.github.com/fabriciosouza21/itexto/main/assets/clique.png" width="500"/>
   </div>
 
 <div align="justify" >
@@ -98,7 +98,7 @@ disponibilizados através de padrões REST, utilizando a api do devall.
   <br>
   <br>
   <div>
-    <img src="https://raw.github.com/fabriciosouza21/itexto/main/assets/api-frontend-03.JPG" width="400"/>
+    <img src="https://raw.github.com/fabriciosouza21/itexto/main/assets/api-frontend-03.JPG" width="500"/>
   </div>
 
   <h3>🚧 Home  </h3>
@@ -107,7 +107,7 @@ deverão ser expostos.
   <br>
   <br>
   <div>
-    <img src="https://raw.github.com/fabriciosouza21/itexto/main/assets/api-frontend-01.JPG" width="400"/>
+    <img src="https://raw.github.com/fabriciosouza21/itexto/main/assets/api-frontend-01.JPG" width="800"/>
   </div>
 
   <h3>🚧 realizar busca</h3>
@@ -116,7 +116,7 @@ deverão ser expostos.
   <br>
   <br>
   <div>
-    <img src="https://raw.github.com/fabriciosouza21/itexto/main/assets/api-frontend-02.JPG" width="400"/>
+    <img src="https://raw.github.com/fabriciosouza21/itexto/main/assets/api-frontend-02.JPG" width="800"/>
   </div>
 
 
