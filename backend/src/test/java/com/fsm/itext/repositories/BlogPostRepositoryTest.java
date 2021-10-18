@@ -1,6 +1,5 @@
 package com.fsm.itext.repositories;
 
-import java.util.List;
 import java.util.Optional;
 
 import org.junit.jupiter.api.Assertions;
@@ -10,6 +9,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTestDatabase;
 import org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTestDatabase.Replace;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Sort;
 
 import com.fsm.itext.entities.BlogPost;
@@ -49,8 +50,13 @@ public class BlogPostRepositoryTest {
 	
 	@Test 
 	public void 	gDeverRetornarUmaListBlogPostContendoSeach() {
+		Integer page=0;
+		Integer pageSize=12;
 		
-		List<BlogPost> posts = repository.findByResumoOrTituloContaining(seach, Sort.by(Sort.Direction.DESC,"dataPublicacao"));
+		PageRequest pageRequest = PageRequest.of(page, pageSize, Sort.by(Sort.Direction.DESC,"dataPublicacao"));
+		
+		
+		Page<BlogPost> posts = repository.findByResumoOrTituloContaining(seach, pageRequest);
 		
 		Assertions.assertNotNull(posts);	
 	}
