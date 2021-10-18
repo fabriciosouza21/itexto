@@ -27,8 +27,10 @@ public class BlogPostController {
 		
 	}
 	@GetMapping
-	public ResponseEntity<List<BlogPostDTO>> buscarPostTexto(@RequestParam(value = "search", defaultValue = "") String seach){
-		List<BlogPostDTO> posts = service.buscarPostTexto(seach);
+	public ResponseEntity<List<BlogPostDTO>> buscarPostTexto(
+			@RequestParam(value = "search", defaultValue = "") String seach,
+			@RequestParam(value = "page", defaultValue = "0") String page){
+		List<BlogPostDTO> posts = service.buscarPostTexto(seach,page);
 		return  ResponseEntity.ok().body(posts);
 	}
 	

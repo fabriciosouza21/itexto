@@ -24,7 +24,7 @@ public class BlogPostControlerIT {
 	public void BuscarPostTextoBlogPostDTODeveRetornarPostsContendoTextoOrdenadosPorDataPublicacao() throws Exception {
 		
 		ResultActions result =
-				mockMvc.perform(get("/post?search=VirtualBox")
+				mockMvc.perform(get("/post?search=VirtualBox&page=0")
 					.contentType(MediaType.APPLICATION_JSON));
 
 		result.andExpect(status().isOk());

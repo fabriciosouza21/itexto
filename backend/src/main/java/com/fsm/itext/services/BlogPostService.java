@@ -5,6 +5,8 @@ import java.util.Optional;
 import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -31,9 +33,12 @@ public class BlogPostService {
 
 	}
 	@Transactional(readOnly = true)
-	public List<BlogPostDTO> buscarPostTexto(String seach) {
-		List<BlogPost> posts = repository.findByResumoOrTituloContaining(seach,Sort.by(Sort.Direction.DESC,"dataPublicacao"));
-
+	public List<BlogPostDTO> buscarPostTexto(String seach, String pageRequestParam) {
+		Integer page = Integer.parseInt(pageRequestParam);
+		Integer size = 12;
+		PageRequest pageRequest = PageRequest.of(page,size, Sort.by(Sort.Direction.DESC,"dataPublicacao") );
+		Page<BlogPost> pagePosts = repository.findByResumoOrTituloContaining(seach,pageRequest);
+		List<BlogPost> posts = pagePosts.getContent();
 		return posts.stream().map( x -> new BlogPostDTO(x)).collect(Collectors.toList());
 	}	
 
