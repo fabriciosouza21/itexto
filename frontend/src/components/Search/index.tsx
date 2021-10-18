@@ -15,14 +15,6 @@ class InfPost{
       this.id = id;
       this.thumbnail = thumbnail;
     }
-    fabricaObjetos(){
-      this.titulo = "";
-      this.resumo = "";
-      this.id = 0;
-      return this
-    }
-    
-  
   }
   
     
@@ -44,6 +36,10 @@ function Seach() {
         encodeURIComponent(value)
         url = `post?search=${value}`
     }
+
+    const onFormSubmit = (e: { preventDefault: () => void; }) => {
+        e.preventDefault();
+      }
 
     const alterInput =  () =>{setvalue(value)
         let lista = [new InfPost("teste","teste",1,"teste")]
@@ -80,14 +76,17 @@ function Seach() {
             setData({post:lista})
         });
     }, []);
+
     return (
         <>
         <div className = "row d-flex justify-content-center">
             <div className="col col-lg-4 ">
-                <div className="input-group mb-3">
-                    <input type="text" className="form-control" placeholder="Buscar...." aria-label="Buscar...." aria-describedby="button-addon2" 
-                    value = {value}  onChange = {change} maxLength = {50} />
-                    <button className ="btn btn-success " type ="button" id="button-addon2" onClick={alterInput}>Buscar</button>
+                <div >
+                <form onSubmit={onFormSubmit} className="input-group mb-3">
+                        <input type="text" className="form-control" placeholder="Buscar...." aria-label="Buscar...." aria-describedby="button-addon2" 
+                        value = {value}  onChange = {change} maxLength = {50} />
+                        <button className ="btn btn-success "  type="submit" id="button-addon2"  onClick={alterInput}>Buscar</button>
+                </form>
                 </div>
             </div>
         </div>
